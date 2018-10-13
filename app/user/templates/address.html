@@ -1,0 +1,42 @@
+<!-- 我的地址界面 -->
+<ion-view view-title="我的收货地址" class="address">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <h1 class="title">我的收货地址</h1>
+  </ion-header-bar>
+  <ion-content padding="true" scroll="true" class="addressContent">
+
+    <div class=""  ng-repeat="item in ac.addressList track by $index" style="padding: 10px;background-color:white;margin-top:10px;border-bottom:1px solid rgba(0, 0, 0, 0.1);">
+      <div class="contact">
+        <div class="left">{{item.username}}</div>
+        <div class="right">{{item.mobile}}</div>
+      </div>
+      <div class="location" ui-sref="main.user.editAddress({type: 'edit', address: item})">
+        <div class="left">
+          收货地址：{{item.address}}
+        </div>
+        <div class="right">
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="editor">
+        <div class="left" ng-click="ac.setDefault(item)">
+          <img src="main/assets/images/checked.png" alt="" ng-if="item.isDefault">
+          <img src="main/assets/images/unchecked.png" alt="" ng-if="!item.isDefault">
+          <!-- <input type="checkbox" ng-model="item.isDefault" name="" value="item.isDefault"> -->
+          <label class="defLabel">默认地址</label>
+        </div>
+        <div class="right">
+          <button class="button button-small icon-left ion-ios-compose-outline" ui-sref="main.user.editAddress({type: 'edit', address: item})">编辑</button>
+          <button class="button button-small icon-left ion-ios-trash-outline" ng-click="ac.deleteAddress(item)">删除</button>
+        </div>
+      </div>
+    </div>
+
+
+  </ion-content>
+  <button class="button button-full button-energized addNewAddress" ui-sref="main.user.editAddress({type: 'add'})">
+    新增收货地址
+  </button>
+</ion-view>

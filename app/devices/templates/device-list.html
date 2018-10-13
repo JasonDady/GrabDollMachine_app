@@ -1,0 +1,40 @@
+<!-- 设备列表页面 -->
+<ion-view view-title="设备列表" class="device-list">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="refresh" ng-src="main/assets/images/refresh.png" ng-click="dlc.getDevices()"/>
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+    <img class="usericon" ng-src="main/assets/images/user.png" ui-sref="main.user.setting"/>
+  </ion-header-bar>
+  <ion-content padding="false" class="has-header deviceListContent" scroll="true">
+    <!-- banner -->
+    <div class="banner">
+      <ion-slide-box auto-play="true" slide-interval="3000" delegate-handle="slideboximgs" does-continue="true">
+        <ion-slide ng-repeat="imgindex in [1,2,3,4] track by $index">
+          <div class="imgLoop">
+            <img class="bannerImg" ng-src="main/assets/images/banner{{imgindex}}.png"/>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+    <!-- 列表 -->
+    <div class="dollList">
+      <div class="roundedRec" ng-repeat="item in dlc.devices track by $index" ng-if="item.isRemoved === false" ui-sref="main.devices.watch({deviceId: item.deviceId, device: item})">
+        <div class="up">
+          <img class="dollImg" ng-src="{{item.imageUrl}}" alt="">
+          <div class="dollName">{{item.name}}</div>
+          <img class="deviceStatus" ng-src="main/assets/images/{{item.status === 1 ? 'game' : 'free'}}.png" alt="">
+        </div>
+        <div class="down">
+          <img class="goldCoins" src="main/assets/images/goldCoins.png" alt="">
+          <div  class="num">{{item.price}}</div>
+          <div class="deviceStatusTxt">{{item.status === 1 ? '游戏中' : '空闲中'}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="nomore">
+      没有更多娃娃机了...
+    </div>
+
+  </ion-content>
+</ion-view>

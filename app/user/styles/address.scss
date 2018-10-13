@@ -1,0 +1,63 @@
+// 地址
+.address{
+  .addressContent{
+    background-color: #f0f0f0;
+    .contact{
+      padding: 0.7rem 0;
+      .left{
+        display: inline-block;
+        font-size: 16px;
+      }
+      .right{
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        font-size: 16px;
+      }
+    }
+    .location{
+      opacity: 0.5;
+      .left{
+        display: inline-block;
+        font-size: 15px;
+      }
+      .right{
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+    .editor{
+      padding: 3rem 0;
+      .left{
+        display: inline-block;
+        font-size: 13px;
+        color: #ff7905;
+        input[type="checkbox"]{
+          width: 20px!important;
+          height: 20px!important;
+        }
+        .defLabel{
+          font-size: 16px;
+          position: relative;
+          bottom: 1px;
+        }
+        img{
+          width: 0.8rem;
+          height: 0.9rem;
+        }
+      }
+      .right{
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .addNewAddress{
+    position: absolute;
+    bottom: -10px;
+  }
+}

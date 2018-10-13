@@ -1,0 +1,47 @@
+<!-- 登录界面 -->
+<ion-view view-title="登录" class="login">
+  <ion-content padding="false" scroll="false" class="content">
+
+    <!-- 切换登录方式 -->
+    <button class="button button-outline icon-left toggleLoginType" ng-click="uc.toggleLogin()">
+      <i class="iconfont ion-record"></i>
+      <label class="loginTypeLabel">{{uc.loginLabel[uc.loginType]}}</label>
+    </button>
+
+    <!-- 手机验证码登录 -->
+    <div class="loginbyMobile" ng-if="uc.loginType==0">
+
+      <div class="list list-inset loginform">
+        <div class="item item-input">
+          <img class="itemImg" src="main/assets/images/mobile.png">
+          <input class="itemInput" ng-model="uc.mobile" type="text" placeholder="请输入您的手机号">
+          <button class="button-outline verificationCode" name="button" ng-click="uc.getVerifyCode()">{{uc.verificationCodeText}}</button>
+        </div>
+      </div>
+      <div class="list list-inset loginform">
+        <label class="item item-input">
+          <img class="itemImg" src="main/assets/images/code.png">
+          <input class="itemInput" ng-model="uc.verificationCode" type="text" placeholder="请输入验证码">
+        </label>
+      </div>
+
+      <!-- 手机号登录 Button -->
+      <button class="button button-block button-energized loginbtn" ng-if="uc.loginType==0" ng-click="uc.loginByMobile()">登录</button>
+    </div>
+
+    <!-- 微信登录 -->
+    <div class="loginbyWX" ng-if="uc.loginType==1">
+      <button class="button button-stable" ng-click="uc.loginByWeixin()">
+      <!-- <button class="button button-stable" ui-sref="main.devices.list"> -->
+        <i class="iconfont icon-weixin"></i>
+        微信登录
+      </button>
+    </div>
+
+    <div class="agreement" ng-if="uc.loginType==1" ui-sref="main.user.agreement">
+      用户协议与隐私条款
+    </div>
+
+
+  </ion-content>
+</ion-view>

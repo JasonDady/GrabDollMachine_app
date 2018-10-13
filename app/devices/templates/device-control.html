@@ -1,0 +1,56 @@
+<!-- 设备控制页面 -->
+<ion-view view-title="设备控制" class="device-control">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+  <ion-content padding="false" class="has-header deviceControlContent" scroll="false">
+    
+
+
+
+
+    <!-- 摄像头区域 -->
+    <div class="displayWindow">
+      <div class="ipCameraWindow">
+        <!-- 提示 -->
+        <div class="tip" ng-if="false">
+          <img class="sad" src="main/assets/images/sad.png" alt="">
+          <div class="uplabel">哇哦，差一点就抓到了呢</div>
+          <div class="downlabel">再玩一次你一定可以抓到的</div>
+          <div class="line"></div>
+          <div class="btns">
+            <img class="btn" src="main/assets/images/trylater.png" alt="">
+            <img class="btn" src="main/assets/images/onceagain.png" alt="">
+          </div>
+          <div class="problem">
+            <label>遇到问题</label>
+            <label class="highlight">点此申诉</label>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- <img class="barrage" src="main/assets/images/barrage.png" alt=""> -->
+      <img class="lens" src="main/assets/images/lens.png" alt="">
+    </div>
+
+    <!-- 操作方向区域 -->
+    <div class="operatingArea">
+      <img ng-click="dcc.dollCatch(1)" class="directionKey left" src="main/assets/images/left.png" alt="">
+      <img ng-click="dcc.dollCatch(2)" class="directionKey right" src="main/assets/images/right.png" alt="">
+      <img ng-click="dcc.dollCatch(4)" class="directionKey up" src="main/assets/images/up.png" alt="">
+      <img ng-click="dcc.dollCatch(3)" class="directionKey down" src="main/assets/images/down.png" alt="">
+    </div>
+
+    <!-- 抓娃娃按钮 -->
+    <div class="catchBtn" ng-click="dcc.dollCatch(5)">
+      <img class="out" src="main/assets/images/outerRing.png" alt="">
+      <img class="in" src="main/assets/images/catch.png" alt="">
+    </div>
+
+  </ion-content>
+  <div class="bottomOperat">
+
+  </div>
+</ion-view>

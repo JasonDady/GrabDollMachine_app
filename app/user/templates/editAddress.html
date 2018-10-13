@@ -1,0 +1,37 @@
+<!-- 编辑我的地址界面 -->
+<ion-view view-title="编辑我的收货地址" class="editAddress">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <h1 class="title">编辑我的收货地址</h1>
+  </ion-header-bar>
+  <ion-content padding="false" scroll="true" class="editAddressContent">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">收货人</span>
+        <input type="text" ng-model="eac.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">联系电话</span>
+        <input type="tel" ng-model="eac.mobile">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">联系地址</span>
+        <input type="text" ng-model="eac.address">
+      </label>
+    </div>
+
+    <div class="setDefaultAddress" ng-click="eac.setDefault()" ng-if="eac.showDefault && eac.type === 'add'">
+      <!-- <img class="check" src="main/assets/images/selected.png" alt="" ng-if="eac.isDefault" ng-model="eac.isDefault"> -->
+      <img src="main/assets/images/checked.png" alt="" ng-if="eac.isDefault">
+      <img src="main/assets/images/unchecked.png" alt="" ng-if="!eac.isDefault">
+      <!-- <input class="check" type="checkbox" ng-model="eac.isDefault" name=""> -->
+      <label class="left">设为默认地址</label>
+    </div>
+
+
+
+  </ion-content>
+  <button class="button button-full button-energized saveAddress" ng-click="eac.saveAddress()">
+    保存
+  </button>
+</ion-view>

@@ -1,0 +1,24 @@
+<!-- 我的娃娃币界面 -->
+<ion-view view-title="我的娃娃币" class="dollsCoin">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <h1 class="title">我的娃娃币</h1>
+  </ion-header-bar>
+  <ion-content padding="false" scroll="true" class="dollsCoinContent">
+    <div class="coinCount">
+      <img class="goldCoins" src="main/assets/images/goldCoins.png" alt="">
+      <label class="coinTotal">{{dcc.dollsConins.gameCurrency}}</label>
+    </div>
+    <div class="list coinList">
+      <a class="item" ng-repeat="item in dcc.dollsConins.orders track by $index">
+        <h2>房间  {{item.device.name}}  游戏扣费</h2>
+        <!-- <p>2017/10/24    13:31:06</p> -->
+        <p>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+        <label class="coinNum">-{{item.device.price}}</label>
+      </a>
+      <div class="noData" >
+        没有数据了
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

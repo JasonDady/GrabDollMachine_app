@@ -1,0 +1,58 @@
+<!-- 充值界面 -->
+<ion-view view-title="我的娃娃币" class="prepaidList">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+  <ion-content padding="false" overflow-scroll="true" class="prepaidListContent">
+
+    <!-- 用户头像 -->
+    <div class="userinfo">
+      <img class="headportrait" ng-src="{{plc.dollsConins.avatarUrl || 'main/assets/images/headportrait.png'}}" alt="">
+      <!-- <div class="name">卡哇伊</div> -->
+      <div class="id">ID:{{plc.dollsConins.mobile || plc.dollsConins.nickName}}</div>
+    </div>
+
+    <!-- tab切换 -->
+    <div class="tab">
+      <div class="tabItem">
+        剩余金币
+        <div class="count active">{{plc.dollsConins.gameCurrency}}</div>
+        <!-- <div class="line"></div> -->
+      </div>
+      <div class="tabItem">
+        共抓中次数
+        <div class="count active">{{plc.dollsConins.orders.length}}</div>
+        <div class="line" ng-if="false"></div>
+      </div>
+    </div>
+
+    <div class="list coinList">
+      <a class="item" ng-repeat="item in plc.coinList track by $index" ui-sref="main.user.prepaid({prepaidItem: item})">
+        <h2>{{item.coin}}<label>金币</label></h2>
+        <label class="coinNum">¥{{item.rmb}}</label>
+      </a>
+      <!-- <a class="item">
+        <h2>2000<label>金币</label></h2>
+        <label class="coinNum">¥9.9</label>
+      </a>
+      <a class="item">
+        <h2>5000<label>金币</label></h2>
+        <label class="coinNum">¥9.9</label>
+      </a>
+      <a class="item">
+        <h2>12500<label>金币</label></h2>
+        <label class="coinNum">¥9.9</label>
+      </a>
+      <a class="item">
+        <h2>25000<label>金币</label></h2>
+        <label class="coinNum">¥9.9</label>
+      </a>
+      <a class="item">
+        <h2>50000<label>金币</label></h2>
+        <label class="coinNum">¥9.9</label>
+      </a> -->
+    </div>
+
+  </ion-content>
+</ion-view>

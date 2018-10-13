@@ -1,0 +1,112 @@
+<!-- 设置界面 -->
+<ion-view view-title="设置" class="setting">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+    <ion-content padding="false" scroll="true" class="has-header settingContent">
+      <div class="list">
+        <a class="item item-icon-right" ui-sref="main.user.dollsCoin">
+          我的娃娃币
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <div class="border-line ml-15"></div>
+        <a class="item item-icon-right" ui-sref="main.user.prize">
+          我的奖品
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <div class="border-line ml-15"></div>
+        <a class="item item-icon-right" ui-sref="main.user.fetchingRecords">
+          我的抓取记录
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <div class="border-line ml-15"></div>
+        <!-- <a class="item item-icon-right" href="#">
+          我的优惠券
+          <i class="icon ion-ios-arrow-right"></i>
+        </a> -->
+        <!-- <div class="border-line ml-15"></div> -->
+        <a class="item item-icon-right" ui-sref="main.user.address">
+          我的收货地址
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <!-- <div class="border-line ml-15"></div> -->
+        <!-- <a class="item item-icon-right" href="#">
+          编辑个人资料
+          <i class="icon ion-ios-arrow-right"></i>
+        </a> -->
+      </div>
+
+      <!-- <div class="list">
+        <a class="item item-icon-right" href="#">
+          邀请奖励
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          输入邀请码
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          找人代充
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+      </div> -->
+
+      <!-- <ul class="list">
+        <li class="item item-toggle">
+           背景音乐
+           <label class="toggle toggle-energized">
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+        <li class="item item-toggle">
+           音效
+           <label class="toggle toggle-energized">
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+        <li class="item item-toggle">
+           录屏
+           <label class="toggle toggle-energized">
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+      </ul> -->
+
+      <div class="list">
+        <!-- <a class="item item-icon-right" href="#">
+          在线客服
+          <i class="icon ion-ios-arrow-right"></i>
+        </a> -->
+        <a class="item item-icon-right" ui-sref="main.user.introduce">
+          玩法说明
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" ui-sref="main.user.problem">
+          常见问题
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" ui-sref="main.user.aboutUs">
+          关于我们
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" ui-sref="main.user.agreement">
+          隐私条款
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+      </div>
+
+      <button class="button button-full button-light" ng-click="sc.logout()">
+        退出当前帐号
+      </button>
+    </ion-content>
+</ion-view>

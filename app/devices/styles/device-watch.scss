@@ -1,0 +1,511 @@
+// 设备控制页面样式
+.device-watch{
+  .back{
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0.5rem;
+    left: 0.5rem;
+    position: absolute;
+  }
+  .deviceWatchContent{
+    background-color: #ff871e;
+    .bg{
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 99;
+    }
+    .displayWindow{
+      width: 95%;
+      margin: 0 auto;
+      height:29rem;
+      text-align: center;
+      border-radius: 0.3rem;
+      background-color: white;
+      position: relative;
+      .ipCameraWindow{
+        overflow: hidden;
+        width: 23.5rem;
+        height: 28rem;
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0rem;
+        right: 0;
+        background-size: cover;
+        background-image: url("../../main/assets/images/screen.png");
+        .catchSuccess{
+          width:87%;
+          height:75%;
+          background-color:#ff8a48;
+          margin:0 auto;
+          margin-top:5rem;
+          position: absolute;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          .mainpane{
+            background-color: #ffd4ae;
+            width: 96%;
+            height: 95%;
+            margin: 0 auto;
+            position: relative;
+            top: 0.5rem;
+            overflow: scroll;
+            .oneline{
+              position: relative;
+              width: 100%;
+              color: #db814e;
+              height: 2.5rem;
+              margin-top: 10px;
+              border-bottom: 1px solid #ddd;
+              margin-bottom: 10px;
+              // background-color: gray;
+              .left{
+                display: inline-block;
+                position:absolute;
+                left:1rem;
+                img{
+                  width:2rem;
+                  height:2rem;
+                  border-radius: 1rem;
+                }
+                label{
+                  position: absolute;
+                  bottom: 0.5rem;
+                  left: 3rem;
+                  width: 6rem;
+                }
+              }
+              .right{
+                display: inline-block;
+                right:1rem;
+                position:absolute;
+                top:0.5rem;
+              }
+            }
+          }
+        }
+        #videoCanvasFront, #videoCanvasSide{
+          width: 100%;
+          height: 100%;
+        }
+        .users{
+          position: absolute;
+          //background-color: red;
+          width: 100%;
+          height: 3rem;
+          bottom: 0;
+          .currentPlayer{
+            position: absolute;
+            left: 0.5rem;
+            bottom: 0.5rem;
+            width: 2.2rem;
+            heigth: 2.2rem;
+          }
+          .statusLabel{
+            position: absolute;
+            font-weight: bold;
+            color: red;
+            left: 1rem;
+            top: 1rem;
+          }
+          // iphone6
+          @media screen and (max-width: 375px) {
+            .statusLabel{
+              top: 0.8rem;
+            }
+          }
+          .watchers{
+            position: relative;
+            width: 2.2rem;
+            heigth: 2.2rem;
+            top: 0.2rem;
+            left: 6.5rem;
+            margin-left: -1.1rem;
+          }
+          // iphone6
+          @media screen and (max-width: 375px) {
+            .watchers{
+              left: 5rem;
+            }
+          }
+          // iphone5
+          @media screen and (max-width: 320px) {
+            .watchers{
+              left: 3.5rem;
+            }
+          }
+          .watcherLabel{
+            position: absolute;
+            color: #9ca7b7;
+            right: 0.5rem;
+            top: 1rem;
+          }
+          // iphone6
+          @media screen and (max-width: 375px) {
+            .watcherLabel{
+              top: 0.8rem;
+            }
+          }
+        }
+        .tip{
+          width: 95%;
+          height: 300px;
+          background-color: white;
+          padding: 0 20px;
+          margin: 50px auto;
+          border-radius: 10px;
+          z-index: 999999;
+          position: relative;
+          .sad{
+            width: 80px;
+            height: 80px;
+            margin-top: 20px;
+          }
+          .uplabel{
+            font-size: 20px;
+            padding-bottom: 10px;
+          }
+          .downlabel{
+            font-size: 16px;
+            // opacity: 0.5;
+            color: #cccccc;
+            padding-bottom: 20px;
+          }
+          .line{
+            width: 100%;
+            height: 1px;
+            background-color: #cccccc;
+          }
+          .btns{
+            padding-top: 20px;
+            position: relative;
+            .btn{
+              width: 100px;
+              height: 40px;
+              margin-left: 20px;
+            }
+            .retryCountDown{
+              position: absolute;
+              right: 20px;
+              top: 32px;
+              font-size: 8px;
+            }
+          }
+          .problem{
+            padding-top: 20px;
+            .highlight{
+              color: #ff8a48;
+            }
+          }
+        }
+        .coinTip{
+          width: 95%;
+          height: 300px;
+          background-color: white;
+          padding: 0 20px;
+          margin: 50px auto;
+          border-radius: 10px;
+          z-index: 999999;
+          position: relative;
+          .tiplabel{
+            padding-top: 80px;
+            padding-bottom: 50px;
+          }
+          .line{
+            width: 100%;
+            height: 1px;
+            background-color: #cccccc;
+          }
+          .btns{
+            padding-top: 20px;
+            position: relative;
+            .btn{
+              width: 100px;
+              height: 40px;
+              margin-left: 20px;
+            }
+            .retryCountDown{
+              position: absolute;
+              right: 20px;
+              top: 32px;
+              font-size: 8px;
+            }
+          }
+        }
+        .close{
+          width:2rem;
+          height:2rem;
+          position:absolute;
+          right:0.5rem;
+          top:4rem;
+          z-index:999;
+        }
+
+      }
+      // iphone6
+      @media screen and (max-width: 375px) {
+        .ipCameraWindow{
+          width: 21.2rem;
+          height: 27rem;
+          overflow: hidden;
+        }
+      }
+      // mi5
+      @media screen and (max-width: 360px) {
+        .ipCameraWindow{
+          width: 20.4rem;
+          height: 24rem;
+          overflow: hidden;
+        }
+      }
+      // iphone5
+      @media screen and (max-width: 320px) {
+        .ipCameraWindow{
+          width: 18.2rem;
+          height: 21.2rem;
+          overflow: hidden;
+        }
+      }
+      .barrage{
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        right: 4rem;
+        bottom: 1rem;
+      }
+      .lens{
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 3rem;
+      }
+      .countDown{
+        position: absolute;
+        font-size: 20px;
+        right: 10px;
+        top: 10px;
+        color: white;
+      }
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .displayWindow{
+        height: 28rem;
+      }
+    }
+    // mi5
+    @media screen and (max-width: 360px) {
+      .displayWindow{
+        height: 25rem;
+      }
+    }
+    // iphone5
+    @media screen and (max-width: 320px) {
+      .displayWindow{
+        height: 22rem;
+      }
+    }
+    .watch{
+      .remainingCoins{
+        position: relative;
+        top: 0.5rem;
+        width: 11rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        left: 0;
+        right: 0;
+        color: white;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 2rem;
+        padding: 0 1rem;
+        margin: 10px auto;
+        .coins{
+          width: 1rem;
+          height: 1rem;
+          top: 0.2rem;
+          position: relative;
+        }
+        .topUp{
+          color: #c7640d;
+          background-color: white;
+          border-radius: 2rem;
+          width: 4rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          position: absolute;
+          text-align: center;
+          right: 0.5rem;
+          top: 0.5rem;
+        }
+      }
+    }
+
+    .operatingArea{
+      position: relative;
+      .directionKey{
+        width: 4rem;
+        height: 4rem;
+      }
+      // iphone5
+      @media screen and (max-width: 320px) {
+        .directionKey{
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+      // mi5
+      @media screen and (max-width: 360px) {
+        .directionKey{
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+      .left{
+        position: absolute;
+        top: 5rem;
+        left: 1rem;
+      }
+      .right{
+        position: absolute;
+        top: 5rem;
+        left: 8rem;
+      }
+      .up{
+        position: absolute;
+        top: 2rem;
+        left: 4.5rem;
+      }
+      .down{
+        position: absolute;
+        top: 8rem;
+        left: 4.5rem;
+      }
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .operatingArea{
+        bottom: 1.5rem;
+      }
+    }
+    .catchBtn{
+      position: relative;
+      .out{
+        position: absolute;
+        right: 1.5rem;
+        width: 7rem;
+        height: 7rem;
+        top: 3.5rem;
+      }
+      .in{
+        position: absolute;
+        right: 2.5rem;
+        width: 5rem;
+        height: 5rem;
+        top: 4.5rem;
+      }
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .catchBtn{
+        bottom: 1.5rem;
+      }
+    }
+    // iphone5
+    @media screen and (max-width: 320px) {
+      .catchBtn{
+        right: -1rem;
+      }
+    }
+  }
+  .bottomBtn{
+    position: absolute;
+    text-align: center;
+    bottom: 2rem;
+    width: 100%;
+    // height: 5rem;
+    left: 0;
+    right: 0;
+    .left{
+      width: 3rem;
+      height: 3rem;
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .left{
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+    .middle{
+      display: inline-block;
+      width: 15rem;
+      height: 3rem;
+      line-height: 3rem;
+      border-radius: 5rem;
+      background-color: white;
+      // bottom: 1rem;
+      position: relative;
+      margin: 0 1.5rem;
+      .middleImg{
+        width: 15rem;
+        height: 3rem;
+      }
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .middle{
+        width: 13rem;
+        height: 2.5rem;
+        .middleImg{
+          width: 13rem;
+          height: 2.5rem;
+          // margin: 0 1.1rem;
+        }
+      }
+    }
+    // iphone5
+    @media screen and (max-width: 320px) {
+      .middle{
+        width: 11rem;
+        height: 2.5rem;
+        margin: 0 1.1rem;
+        .middleImg{
+          width: 11rem;
+          height: 2.5rem;
+          // margin: 0 1.1rem;
+        }
+      }
+
+    }
+    .right{
+      width: 3rem;
+      height: 3rem;
+    }
+    // iphone6
+    @media screen and (max-width: 375px) {
+      .right{
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+  // iphone5
+  @media screen and (max-width: 320px) {
+    .bottomBtn{
+      bottom: -1.5rem;
+    }
+  }
+  // mi5
+  @media screen and (max-width: 360px) {
+    .bottomBtn{
+      bottom: 20px;
+    }
+  }
+}

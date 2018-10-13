@@ -1,0 +1,124 @@
+<!-- 设备观看页面 -->
+<ion-view view-title="设备观看" class="device-watch">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+  <ion-content padding="false" class="has-header deviceWatchContent" scroll="false">
+    <div class="bg" ng-if="dwc.showRes"></div>
+    <!-- 摄像头区域 -->
+    <div class="displayWindow">
+      <div class="ipCameraWindow">
+
+        <!-- 最近抓中记录 -->
+        <div ng-if="dwc.show" class="catchSuccess">
+          <div class="mainpane">
+            <div class="" >最近抓中的记录</div>
+            <div class="oneline" ng-repeat="item in dwc.successList track by $index">
+              <div class="left">
+                <img ng-src="{{item.appUser.avatarUrl || 'main/assets/images/default.png'}}">
+                <label>{{item.appUser.mobile || item.appUser.nickName}}</label>
+              </div>
+              <div class="right">{{item.createTime | date:'yyyy-MM-dd'}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 抓取结果提示 -->
+        <div class="tip" ng-if="dwc.showRes">
+          <img class="sad" ng-src="main/assets/images/{{dwc.winningState === 0 ? 'sad' : 'happy'}}.png" alt="">
+          <div class="uplabel">{{dwc.winningState === 0 ? '哇哦，差一点就抓到了呢' : '恭喜'}}</div>
+          <div class="downlabel">{{dwc.winningState === 0 ? '再玩一次你一定可以抓到的' : '可以再来一局哦！'}}</div>
+          <div class="line"></div>
+          <div class="btns">
+            <img class="btn" src="main/assets/images/trylater.png" ng-click="dwc.tryagainlater()" alt="">
+            <img class="btn" ng-src="main/assets/images/onceagain{{dwc.retryCountDown}}.png" ng-click="dwc.onceagain()" alt="">
+            <!-- <label class="retryCountDown">再来一局（{{dwc.retryCountDown}}）</label> -->
+          </div>
+          <div class="problem">
+            <!-- <label>遇到问题</label> -->
+            <!-- <label class="highlight">点此申诉</label> -->
+          </div>
+        </div>
+
+        <!-- 钱不够提示 -->
+        <div class="coinTip" ng-if="dwc.tipNoCoin">
+          <div class="tiplabel">钱不够上机了，请充值</div>
+          <div class="line"></div>
+          <div class="btns">
+            <img class="btn" src="main/assets/images/shareCode.png" ng-click="dwc.gotoprepaidList()" alt="">
+            <img class="btn" src="main/assets/images/cancle.png" ng-click="dwc.tipNoCoin = false" alt="">
+          </div>
+        </div>
+
+
+
+        <img class="close" ng-if="dwc.show" ng-click="dwc.show=false" src="main/assets/images/close.png" alt="">
+
+        <canvas id="videoCanvasFront" ng-hide="dwc.front" width="340px" height="430px"></canvas>
+        <canvas id="videoCanvasSide" ng-show="dwc.front" width="340px" height="430px"></canvas>
+        <script type="text/javascript" src="main/assets/lib/jsmpg.js"></script>
+
+        <!-- 视频底部观看人数 -->
+        <div class="users" ng-if="dwc.isControl === false">
+          <!-- <img class="currentPlayer" src="main/assets/images/user1.png" alt=""> -->
+          <label class="statusLabel" ng-if="dwc.status === 1">表演中...</label>
+          <!-- <img class="watchers" src="main/assets/images/user2.png" alt="">
+          <img class="watchers" src="main/assets/images/user3.png" alt="">
+          <img class="watchers" src="main/assets/images/user4.png" alt=""> -->
+          <!-- <img class="watchers" src="main/assets/images/user5.png" alt=""> -->
+          <label class="watcherLabel">{{dwc.onlineNum}}人围观中</label>
+        </div>
+
+        <!-- 切换视频 -->
+        <img class="lens" src="main/assets/images/lens.png" alt="" ng-click="dwc.toggleCam()">
+        <label class="countDown" ng-if="dwc.isControl === true && dwc.showCt === true">{{dwc.countDown}}''</label>
+      </div>
+    </div>
+
+    <!-- 观看模块UI -->
+    <div class="watch" ng-if="dwc.isControl === false">
+      <!-- 剩余金币及去充值按钮 -->
+      <div class="remainingCoins" ng-click="dwc.gotoprepaidList()" ui-sref="main.user.prepaidList">
+        <label>剩余</label>
+        <img class="coins" src="main/assets/images/goldCoins.png" alt="">
+        <label for="">{{dwc.gameCurrency}}</label>
+        <label class="topUp">去充值</label>
+      </div>
+    </div>
+
+    <!-- 控制模块 UI -->
+    <div class="control" ng-if="dwc.isControl === true">
+      <!-- 操作方向区域 -->
+      <div class="operatingArea">
+        <img ng-click="dwc.dollCatch(3)" class="directionKey left" src="main/assets/images/left.png" alt="">
+        <img ng-click="dwc.dollCatch(4)" class="directionKey right" src="main/assets/images/right.png" alt="">
+        <img ng-click="dwc.dollCatch(1)" class="directionKey up" src="main/assets/images/up.png" alt="">
+        <img ng-click="dwc.dollCatch(2)" class="directionKey down" src="main/assets/images/down.png" alt="">
+
+        <!-- <img on-hold="dwc.moveClaws(3)" on-release="dwc.releaseBtn()" class="directionKey left" src="main/assets/images/left.png" alt="">
+        <img on-hold="dwc.moveClaws(4)" on-release="dwc.releaseBtn()" class="directionKey right" src="main/assets/images/right.png" alt="">
+        <img on-hold="dwc.moveClaws(1)" on-release="dwc.releaseBtn()" class="directionKey up" src="main/assets/images/up.png" alt="">
+        <img on-hold="dwc.moveClaws(2)" on-release="dwc.releaseBtn()" class="directionKey down" src="main/assets/images/down.png" alt=""> -->
+      </div>
+
+      <!-- 抓娃娃按钮 -->
+      <div class="catchBtn" ng-click="dwc.dollCatch(5)">
+        <img class="out" src="main/assets/images/outerRing.png" alt="">
+        <img class="in" src="main/assets/images/catch.png" alt="">
+      </div>
+    </div>
+
+
+
+  </ion-content>
+  <!-- 底部按钮 -->
+  <div class="bottomBtn" ng-if="dwc.isControl === false">
+    <!-- <img class="left" src="main/assets/images/message.png" alt=""> -->
+    <div class="middle" ng-click="dwc.startDollCatch()">
+      <!-- <label for="">免费抓取(1)</label> -->
+      <img class="middleImg" src="main/assets/images/free2catch.png" alt="">
+    </div>
+    <img class="right" src="main/assets/images/bottomback.png" ng-click="dwc.queryDeviceWinningGrabRecord()" alt="">
+  </div>
+</ion-view>

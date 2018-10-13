@@ -1,0 +1,30 @@
+// 通用样式
+.diyheader{
+  .back{
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0.5rem;
+    left: 0.5rem;
+    position: absolute;
+  }
+  .refresh{
+    position: absolute;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0.5rem;
+  }
+  .diytitle{
+    margin: 0 auto!important;
+    height: 2rem!important;
+    top: 0.5rem!important;
+  }
+  .usericon{
+    position: absolute;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0.5rem;
+  }
+
+}

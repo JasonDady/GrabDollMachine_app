@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "ionic": "~1.1.0",
+    "angular": "~1.4.5",
+    "angular-animate": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "ngCordova": "~0.1.17-alpha",
+    "angular-gettext": "~2.1.2",
+    "angular-resource": "~1.4.7",
+    "angular-live-set": "*",
+    "angular-cookies": "~1.4.7",
+    "angular-lodash": "~0.1.2",
+    "jquery": "~2.1.4",
+    "angular-websocket": "^2.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.5"
+  },
+  "resolutions": {
+    "angular": "~1.4.5",
+    "angular-animate": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-ui-router": "~0.2.15"
+  },
+  "name": "ddj",
+  "private": true
+}

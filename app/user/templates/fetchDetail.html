@@ -1,0 +1,49 @@
+<!-- 设置界面 -->
+<ion-view view-title="抓取记录" class="setting">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+    <ion-content padding="false" scroll="true" class="has-header settingContent">
+      <div class="list">
+        <a class="item item-icon-right">
+          数量
+          <label style="float:right;">1</label>
+        </a>
+        <!-- <div class="border-line ml-15"></div> -->
+        <a class="item item-icon-right">
+          游戏编号
+          <label style="float:right;">{{fdc.detail.orderNo}}</label>
+        </a>
+        <!-- <div class="border-line ml-15"></div> -->
+        <!-- <a class="item item-icon-right">
+          当前状态
+          <label>寄存中</label>
+        </a> -->
+        <!-- <div class="border-line ml-15"></div> -->
+        <a class="item item-icon-right">
+          可换娃娃币
+          <label style="float:right;">{{fdc.detail.price}}</label>
+        </a>
+
+      </div>
+
+      <div class="" ng-if="fdc.detail.exchangeStatus === 0" style="width:100%;text-align:center;">
+        <img style="width:110px;" src="main/assets/images/exchangeGold.png" alt="" ng-click="fdc.exchangeGameCurrency()">&nbsp;&nbsp;&nbsp;&nbsp;
+        <img style="width:110px;" src="main/assets/images/requestDelivery.png" alt="" ng-click="fdc.confirmDeliveryAddress()">
+      </div>
+
+      <div class="" style="padding:10px;">
+        <h5>兑换金币：</h5>
+        <p>选择兑换金币将失去这个娃娃，得到一定数量的金币</p><br>
+
+        <h5>请求发货：</h5>
+        <p>娃娃寄存时间为抓取成功之后的15天，15天后未申请发货，系统将自动为你兑换成相应金币</p>
+        <br>
+        <p>申请两只或两只以上数量的娃娃免运费发货。单独申请一只娃娃不享受免运费发货。</p>
+        <p>目前仅支持中国大陆地区范围内邮寄</p>
+      </div>
+
+
+    </ion-content>
+</ion-view>

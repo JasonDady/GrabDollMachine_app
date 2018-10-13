@@ -1,0 +1,19 @@
+<!-- 抓取记录界面 -->
+<ion-view view-title="抓取记录" class="fetchingRecords">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <h1 class="title">我的抓取记录</h1>
+  </ion-header-bar>
+  <ion-content padding="false" scroll="true" class="fetchingRecordsContent">
+    <div class="list fetchingList">
+      <a class="item" ng-repeat="item in frc.dataList.orders track by $index">
+        <h2>{{item.device.name}}</h2>
+        <p>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+        <label class="fetchResult" ng-class="{success: item.status === 1}">{{item.status === 0 ? '抓取失败' : '抓取成功'}}</label>
+      </a>
+    </div>
+    <div class="noData" ng-if="frc.dataList.length === 0">
+      没有数据了...
+    </div>
+  </ion-content>
+</ion-view>

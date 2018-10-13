@@ -1,0 +1,128 @@
+// 登录界面样式
+.login{
+  .content{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../main/assets/images/logo.png");
+  }
+  // 切换登录方式
+  .toggleLoginType{
+    border-color: #bfbfbf;
+    border-width: 2px;
+    border-radius: 5px;
+    position: absolute;
+    width: 10rem;
+    right: 1rem;
+    top: 23rem;
+    .ion-record{
+      color: #fc763b;
+    }
+    .loginTypeLabel{
+      color: black;
+    }
+  }
+  // iphone6
+  @media screen and (max-width: 375px) {
+    .toggleLoginType{
+      top: 21rem;
+    }
+  }
+  // iphone5
+  @media screen and (max-width: 320px) {
+    .toggleLoginType{
+      top: 18rem;
+    }
+  }
+  // 手机验证码登录样式
+  .loginbyMobile{
+    position: relative;
+    width: 100%;
+    padding: 0 2rem;
+    .verificationCode{
+      height: 2rem;
+      line-height: 1rem;
+      border: gray 1px solid;
+      background-color: #ff7905;
+      color: white;
+    }
+    margin-top: 29rem;
+    .loginbyMobileBtn{
+      font-family: serif;
+      width: 100%;
+      text-align: center;
+      .button{
+        width: 10rem;
+      }
+    }
+    .loginform{
+      margin: 20px 0px;
+      .itemImg{
+        width:1.2rem;
+        height:1.5rem;
+      }
+      .itemInput{
+        padding-left:1rem;
+        margin-left:1rem;
+        border-left: 1px solid #ddd;
+      }
+    }
+    // .loginbtn{
+    //   top: 0rem;
+    // }
+    // // iphone5
+    // @media screen and (max-width: 320px) {
+    //   .loginbtn{
+    //     top: 0;
+    //   }
+    // }
+  }
+  // iphone6
+  @media screen and (max-width: 375px) {
+    .loginbyMobile{
+      margin-top: 26rem;
+      .mobile{
+        margin-top: 27rem;
+      }
+
+    }
+  }
+  // iphone5
+  @media screen and (max-width: 320px) {
+    .loginbyMobile{
+      margin-top: 23rem;
+    }
+  }
+  @media (min-aspect-ratio: 360/610) {
+    .loginbyMobile {
+      position: absolute;
+      bottom: -4rem;
+    }
+  }
+  // 微信登录
+  .loginbyWX{
+    width: 100%;
+    position: absolute;
+    bottom: 8rem;
+    text-align: center;
+    .button{
+      width: 10rem;
+      color: white;
+      background-color: rgb(37, 180, 21);
+    }
+  }
+  .agreement{
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  // iphone5
+  @media screen and (max-width: 320px) {
+    .loginbyWX{
+      bottom: 5rem;
+    }
+  }
+}

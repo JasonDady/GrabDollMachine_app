@@ -1,0 +1,32 @@
+<!-- 我的奖品界面 -->
+<ion-view view-title="抓取记录" class="prize">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <h1 class="title">我的奖品</h1>
+  </ion-header-bar>
+  <ion-content padding="false" scroll="true" class="prizeContent">
+    <div class="list fetchingList">
+      <div class="tab">
+        <div class="tabItem">
+          剩余金币
+          <div class="count active">{{pc.dollsConins.gameCurrency}}</div>
+        </div>
+        <div class="tabItem">
+          共抓中次数
+          <div class="count active">{{pc.dollsConins.orders.length}}</div>
+        </div>
+      </div>
+      <a class="item" ui-sref="main.user.fetchDetail({fetchDetail: item})" ng-repeat="item in pc.dollsConins.orders track by $index">
+        <h2>{{item.device.name}}</h2>
+        <p>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+        <label class="fetchResult">抓取成功
+          <div class="status" ng-if="item.exchangeStatus !== 0">{{item.exchangeStatus === 1 ? '已邮寄' : '已兑换金币'}}</div>
+        </label>
+
+      </a>
+      <div class="noData" ng-if="pc.dollsConins.orders.length === 0">
+        没有数据了...
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: main/templates/menu.html:42
+msgid "<translate>Device</translate>"
+msgstr ""
+
+#: devices/templates/device-configwifi.html:7
+msgid "1.Choose a wireless network in your home."
+msgstr ""
+
+#: devices/templates/device-configwifi.html:33
+msgid "2.Please enter the password for the wireless network."
+msgstr ""
+
+#: devices/templates/device-configwifi.html:2
+msgid "Add Device"
+msgstr ""
+
+#: main/templates/menu.html:43
+msgid "Device"
+msgstr ""
+
+#: devices/templates/device-list.html:2
+msgid "Device List"
+msgstr ""
+
+#: devices/templates/device-list.html:44
+msgid "Find New Devices"
+msgstr ""
+
+#: user/templates/login.html:1
+#: user/templates/login.html:15
+msgid "Log in"
+msgstr ""
+
+#: user/templates/login.html:18
+msgid "Log Out"
+msgstr ""
+
+#: devices/templates/device-configwifi.html:38
+msgid "OK"
+msgstr ""
+
+#: user/templates/login.html:16
+msgid "Or create an account"
+msgstr ""
+
+#: user/templates/login.html:10
+#: user/templates/signup.html:10
+msgid "Password"
+msgstr ""
+
+#: devices/templates/device-list.html:5
+msgid "Pull to refresh..."
+msgstr ""
+
+#: devices/templates/device-list.html:6
+msgid "Refreshing!"
+msgstr ""
+
+#: user/templates/signup.html:1
+#: user/templates/signup.html:14
+msgid "Signup"
+msgstr ""
+
+#: devices/templates/device-loading.html:9
+msgid "Switch"
+msgstr ""
+
+#: devices/templates/device-list.html:39
+msgid "Unbundling"
+msgstr ""
+
+#: main/templates/menu.html:40
+msgid "User"
+msgstr ""
+
+#: user/templates/login.html:6
+#: user/templates/signup.html:6
+msgid "Username"
+msgstr ""
+
+#: main/templates/menu.html:30
+msgid "Welcome"
+msgstr ""

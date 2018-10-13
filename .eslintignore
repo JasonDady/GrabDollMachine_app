@@ -1,0 +1,9 @@
+# Ignore files compiled from browserify
+**/index.bundle.js
+**/lb-service.js
+
+#iconfont
+app/main/assets/fonts/iconfont.js
+
+# jsmpg.js
+**/jsmpg.js

@@ -1,0 +1,37 @@
+<!-- 充值界面 -->
+<ion-view view-title="我的娃娃币" class="prepaid">
+  <ion-header-bar align-title="center" class="bar-energized diyheader">
+    <img class="back" src="main/assets/images/back.png" alt="" ng-click="goBack()">
+    <img class="title diytitle" ng-src="main/assets/images/ddj.png" />
+  </ion-header-bar>
+  <ion-content padding="true" overflow-scroll="true" class="prepaidContent">
+    <div class="selected">
+      <img class="goldCoins" src="main/assets/images/goldCoins.png" alt="">
+      <label class="num">{{pc.selectedPrepaid.coin}}</label>
+      <label class="rmb">¥{{pc.selectedPrepaid.rmb}}</label>
+    </div>
+    <div class="title">首冲礼包</div>
+    <div class="payType">
+      <!-- <div class="payItem" ng-click="pc.selectPayType(0)">
+        <img class="payIcon" src="main/assets/images/alipay.png" alt="">
+        <label class="label">支付宝</label>
+        <img class="selected" src="main/assets/images/payselected.png" ng-if="pc.payType === 0" alt="">
+      </div> -->
+      <div class="payItem" ng-click="pc.selectPayType(0)">
+        <img class="payIcon" src="main/assets/images/wechatpay.png" alt="">
+        <label class="label">微信</label>
+        <img class="selected" src="main/assets/images/payselected.png" ng-if="pc.payType === 0" alt="">
+      </div>
+    </div>
+
+    <!-- <button class="button button-block button-energized" ng-click="pc.pay()">
+      购买
+    </button> -->
+
+    <div class="buy">
+      <img class="buyBtn" src="main/assets/images/buy.png" ng-click="pc.pay()" alt="">
+    </div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+// 抓取记录
+.fetchingRecords{
+  .fetchingRecordsContent{
+    .fetchingList{
+      .item{
+        .fetchResult{
+          position: absolute;
+          right:1rem;
+          bottom:2rem;
+        }
+        .success{
+          color: red;
+        }
+      }
+    }
+    .noData{
+      text-align: center;
+      opacity: 0.5;
+      padding-top: 2rem;
+    }
+  }
+}
